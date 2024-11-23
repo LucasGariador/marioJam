@@ -4,6 +4,14 @@ public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField]
     private Transform playerPosition;
+
+    public enum FoodType
+    {
+        Churro,
+        Pancho,
+        Choclo
+    }
+
     void Start()
     {
         
