@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     [SerializeField] private float speed;
     private Vector2 moveInput;
+    [SerializeField] AudioClip clip;
 
 
     void Start()
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveInput = new Vector2(moveX, moveY);
+
     }
 
     private void FixedUpdate()
