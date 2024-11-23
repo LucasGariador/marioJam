@@ -4,9 +4,12 @@ using System;
 public class EnemyAI : MonoBehaviour
 {
     public enum EnemyState { Chase, Idle }
-    public EnemyState currentState = EnemyState.Chase;
+    public EnemyState currentState = EnemyState.Idle;
 
     private GameManager.FoodType currentFoodType;
+    private GameObject currentFoodSprite;
+    [SerializeField]
+    private Transform foodPosition;
 
     public Transform player; // Referencia al jugador
     public float speed = 3f; // Velocidad del enemigo
@@ -21,25 +24,31 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+
         int foodTypes = Enum.GetNames(typeof(GameManager.FoodType)).Length;
         int randomFoodItem = UnityEngine.Random.Range(0, foodTypes);
         currentFoodType = (GameManager.FoodType)randomFoodItem;
+        currentFoodSprite = GameManager.instance.GetFoodSprite(currentFoodType);
+        Instantiate(currentFoodSprite, foodPosition.position, Quaternion.identity, foodPosition);
 
         Debug.Log("My food is "+ currentFoodType);
         rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.zero;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         originalSprite = spriteRenderer.sprite; // Guarda el sprite original
     }
 
-    void Update()
+    void FixedUpdate()
     {
         switch (currentState)
         {
             case EnemyState.Chase:
+                foodPosition.gameObject.SetActive(true);
                 ChasePlayer();
                 break;
 
             case EnemyState.Idle:
+                foodPosition.gameObject.SetActive(false);
                 Idle();
                 break;
         }
@@ -75,7 +84,7 @@ public class EnemyAI : MonoBehaviour
         {
             // Cambia de vuelta al estado de persecución
             spriteRenderer.sprite = originalSprite;
-            currentState = EnemyState.Chase;
+            //currentState = EnemyState.Chase;
         }
     }
 
