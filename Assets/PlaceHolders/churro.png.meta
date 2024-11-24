@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      churro_0: -7815443328050975512
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
