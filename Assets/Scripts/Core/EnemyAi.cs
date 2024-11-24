@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -143,6 +144,12 @@ public class EnemyAI : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             GameManager.instance.LoseGame();
+            Invoke("Reiniciar", 2f);
         }
+    }
+
+    public void Reiniciar()
+    {
+        SceneManager.LoadScene("Lucas");
     }
 }
