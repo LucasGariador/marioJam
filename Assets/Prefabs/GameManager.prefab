@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3274678745118808034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7537088274087689002}
+  - component: {fileID: 281193106048615226}
+  - component: {fileID: 9153182271735188838}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7537088274087689002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274678745118808034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &281193106048615226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274678745118808034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04601bdcc7998944284982fb35ce94c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 0}
+  churro: {fileID: 8271954934264025707, guid: 0c8a806d4334fc043a8085f717dc1c1c, type: 3}
+  pancho: {fileID: 616771148540066941, guid: 5afb796034d08464b8ccf7623daea161, type: 3}
+  choclo: {fileID: 3705785875485831410, guid: de988279b3aaaef4fad0b9bce6729678, type: 3}
+  bulletPool: {fileID: 9153182271735188838}
+  currentFoodType: 0
+--- !u!114 &9153182271735188838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274678745118808034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc54d6fc7e31d48a6f9a39fd0c41b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4919319686049950913, guid: 03de6265c29bea0468f614ed3f54328d, type: 3}
+  bulletTypes:
+  - foodtype: 0
+    sprite: {fileID: -7815443328050975512, guid: 3290b816bd25140438f937b5d0f8f1a6, type: 3}
+    initialSize: 2
+  - foodtype: 1
+    sprite: {fileID: 523803868112935712, guid: b2a789d31d0f53046a2d282fb9803859, type: 3}
+    initialSize: 2
+  - foodtype: 2
+    sprite: {fileID: -162024870649404023, guid: b639e1828e8864d489f27e99201423b4, type: 3}
+    initialSize: 2

@@ -40,6 +40,7 @@ public class ShootPlayer : MonoBehaviour
 
     void Shoot()
     {
+        GameManager.instance.HasShot(fireRate);
         var shoot = bulletPool.GetBullet(GameManager.instance.GetCurrentFoodType(), gun.position, gun.rotation);
         targetRotation.z = 0;
         finalTarget = (targetRotation - transform.position).normalized;

@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player; // Referencia al jugador
     public float speed = 3f; // Velocidad del enemigo
+    private float currentSpeed;
     public float stopDistance = 1.5f; // Distancia mínima antes de detenerse
     public float idleTime = 3f; // Tiempo que permanece en estado Idle
     public Sprite idleSprite; // Sprite para el modo Idle
@@ -24,18 +25,12 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-
-        int foodTypes = Enum.GetNames(typeof(GameManager.FoodType)).Length;
-        int randomFoodItem = UnityEngine.Random.Range(0, foodTypes);
-        currentFoodType = (GameManager.FoodType)randomFoodItem;
-        currentFoodSprite = GameManager.instance.GetFoodSprite(currentFoodType);
-        Instantiate(currentFoodSprite, foodPosition.position, Quaternion.identity, foodPosition);
-
         Debug.Log("My food is "+ currentFoodType);
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         originalSprite = spriteRenderer.sprite; // Guarda el sprite original
+        currentSpeed = speed;
     }
 
     void FixedUpdate()
@@ -43,15 +38,31 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Chase:
+                if(foodPosition.childCount == 0)
+                Instantiate(GetRandomFoodObject(), foodPosition.position, Quaternion.identity, foodPosition);
+
                 foodPosition.gameObject.SetActive(true);
                 ChasePlayer();
                 break;
 
             case EnemyState.Idle:
+                if (foodPosition.childCount >= 1)
+                    Destroy(foodPosition.transform.GetChild(0).gameObject);
+
+                currentSpeed = speed;
                 foodPosition.gameObject.SetActive(false);
                 Idle();
                 break;
         }
+    }
+
+    private GameObject GetRandomFoodObject()
+    {
+        int foodTypes = Enum.GetNames(typeof(GameManager.FoodType)).Length;
+        int randomFoodItem = UnityEngine.Random.Range(0, foodTypes);
+        currentFoodType = (GameManager.FoodType)randomFoodItem;
+        currentFoodSprite = GameManager.instance.GetFoodSprite(currentFoodType);
+        return currentFoodSprite;
     }
 
     void ChasePlayer()
@@ -63,7 +74,7 @@ public class EnemyAI : MonoBehaviour
 
         if (distance > stopDistance)
         {
-            rb.linearVelocity = direction * speed;
+            rb.linearVelocity = direction * currentSpeed;
         }
         else
         {
@@ -84,16 +95,22 @@ public class EnemyAI : MonoBehaviour
         {
             // Cambia de vuelta al estado de persecución
             spriteRenderer.sprite = originalSprite;
-            //currentState = EnemyState.Chase;
+            currentState = EnemyState.Chase;
         }
     }
 
-    public void GetHit(GameManager.FoodType FoodTypeHit)
+    public void GetHit(GameManager.FoodType foodTypeHit)
     {
         // Cambia al estado Idle
-        currentState = EnemyState.Idle;
-        spriteRenderer.sprite = idleSprite; // Cambia el sprite
-        idleTimer = idleTime; // Reinicia el temporizador
+        if (foodTypeHit == currentFoodType)
+        {
+            currentState = EnemyState.Idle;
+            idleTimer = idleTime;
+        }
+        else
+        {
+            currentSpeed += speed/2;
+        }
     }
 
     private void OnDrawGizmosSelected()

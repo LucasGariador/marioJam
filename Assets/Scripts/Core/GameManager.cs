@@ -12,6 +12,8 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private GameObject choclo;
 
+    private FoodTypeDisplayer foodTypeDisplayer;
+
     [SerializeField]
     BulletPool bulletPool;
     public enum FoodType
@@ -27,6 +29,11 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         Physics.gravity = Vector2.zero;
+    }
+    private void Start()
+    {
+        foodTypeDisplayer = FindAnyObjectByType<FoodTypeDisplayer>();
+        playerPosition = FindAnyObjectByType<PlayerController>().transform;
     }
 
     public FoodType GetCurrentFoodType()
@@ -46,6 +53,12 @@ public class GameManager : MonoSingleton<GameManager>
                 return choclo;
             default: return null;
         }
+    }
+
+    public void HasShot(float fireRate)
+    {
+        foodTypeDisplayer.isReducing = true;
+        foodTypeDisplayer.duration = fireRate;
     }
 
     public BulletPool GetBulletPool()
