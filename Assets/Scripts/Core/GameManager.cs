@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    [SerializeField]
-    private Transform playerPosition;
+    public Transform playerPosition;
     [SerializeField]
     private GameObject churro;
     [SerializeField]
@@ -13,6 +12,8 @@ public class GameManager : MonoSingleton<GameManager>
     private GameObject choclo;
 
     private FoodTypeDisplayer foodTypeDisplayer;
+    [HideInInspector]
+    public int[] CurrentAmmo { get; private set; }
 
     [SerializeField]
     BulletPool bulletPool;
@@ -34,6 +35,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foodTypeDisplayer = FindAnyObjectByType<FoodTypeDisplayer>();
         playerPosition = FindAnyObjectByType<PlayerController>().transform;
+
+        CurrentAmmo = new int[Enum.GetNames(typeof(FoodType)).Length];
+        foreach (FoodType ft in (FoodType[])Enum.GetValues(typeof(FoodType)))
+        {
+                CurrentAmmo[(int)ft] = FindAnyObjectByType<ShootPlayer>().maxAmmo;
+        }
     }
 
     public FoodType GetCurrentFoodType()
@@ -57,8 +64,23 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void HasShot(float fireRate)
     {
+        foreach (FoodType ft in (FoodType[])Enum.GetValues(typeof(FoodType))) 
+        {
+            if (ft == currentFoodType)
+                CurrentAmmo[(int)ft] -= 1;
+        }
         foodTypeDisplayer.isReducing = true;
         foodTypeDisplayer.duration = fireRate;
+    }
+
+    public int GetAmmo() 
+    {
+        return CurrentAmmo[(int)currentFoodType];
+    }
+
+    public void StockAmmo()
+    {
+        CurrentAmmo[(int)currentFoodType] += 1;
     }
 
     public BulletPool GetBulletPool()

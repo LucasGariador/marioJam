@@ -5,23 +5,24 @@ public class EnemyAI : MonoBehaviour
 {
     public enum EnemyState { Chase, Idle }
     public EnemyState currentState = EnemyState.Idle;
+    private bool isFull = false;
 
     private GameManager.FoodType currentFoodType;
     private GameObject currentFoodSprite;
     [SerializeField]
     private Transform foodPosition;
-
+    [SerializeField]
+    float agroDistance = 15;
+    
     public Transform player; // Referencia al jugador
     public float speed = 3f; // Velocidad del enemigo
     private float currentSpeed;
     public float stopDistance = 1.5f; // Distancia mínima antes de detenerse
-    public float idleTime = 3f; // Tiempo que permanece en estado Idle
     public Sprite idleSprite; // Sprite para el modo Idle
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer; // Referencia al SpriteRenderer
     private Sprite originalSprite; // Sprite original para el modo Chase
-    private float idleTimer = 0f;
 
     void Start()
     {
@@ -89,12 +90,8 @@ public class EnemyAI : MonoBehaviour
     void Idle()
     {
         rb.linearVelocity = Vector2.zero; // Detén el movimiento
-        idleTimer -= Time.deltaTime;
-
-        if (idleTimer <= 0)
+        if(Vector2.Distance(transform.position, GameManager.instance.playerPosition.position) <= agroDistance && !isFull)
         {
-            // Cambia de vuelta al estado de persecución
-            spriteRenderer.sprite = originalSprite;
             currentState = EnemyState.Chase;
         }
     }
@@ -105,7 +102,8 @@ public class EnemyAI : MonoBehaviour
         if (foodTypeHit == currentFoodType)
         {
             currentState = EnemyState.Idle;
-            idleTimer = idleTime;
+            isFull = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = false; //Desactiva el collider
         }
         else
         {

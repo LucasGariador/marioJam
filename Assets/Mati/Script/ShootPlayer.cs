@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ShootPlayer : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ShootPlayer : MonoBehaviour
     private Vector3 finalTarget;
     private BulletPool bulletPool;
 
+    public int maxAmmo = 5;
     public float fireRate = .5f;
 
     private float nextFireTime = 0f; 

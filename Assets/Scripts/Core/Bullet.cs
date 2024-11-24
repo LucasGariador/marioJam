@@ -37,6 +37,7 @@ public class Bullet : MonoBehaviour
         if (collision != null && collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyAI>().GetHit(typeName);
+            Deactivate();
         }
     }
 }
