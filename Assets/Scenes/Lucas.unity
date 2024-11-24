@@ -274,7 +274,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -779,7 +783,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -922,7 +930,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1417,7 +1429,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1482,7 +1498,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1547,7 +1567,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1612,7 +1636,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1756,7 +1784,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2094,7 +2126,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2159,7 +2195,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2387,7 +2427,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2594,7 +2638,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2659,7 +2707,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2729,7 +2781,11 @@ PrefabInstance:
       objectReference: {fileID: 1638824122}
     - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: agroDistance
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544113505138216470, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3205,10 +3261,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1638824122}
-    - target: {fileID: 2038892107167159196, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
-      propertyPath: agroDistance
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 3895686354501600039, guid: 8bbd47a688398734093bf6735af57ab6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.73
