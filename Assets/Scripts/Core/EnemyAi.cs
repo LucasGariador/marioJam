@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
     private Transform foodPosition;
     [SerializeField]
     float agroDistance = 15;
+    [SerializeField]
+    private GameObject mapViewer;
     
     public Transform player; // Referencia al jugador
     public float speed = 3f; // Velocidad del enemigo
@@ -121,6 +123,7 @@ public class EnemyAI : MonoBehaviour
             currentState = EnemyState.Idle;
             isFull = true;
             gameObject.GetComponent<CircleCollider2D>().enabled = false; //Desactiva el collider
+            mapViewer.SetActive(false);
 
         }
         else
@@ -133,5 +136,13 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, agroDistance);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            GameManager.instance.LoseGame();
+        }
     }
 }

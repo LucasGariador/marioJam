@@ -13,6 +13,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private GameObject pochoclo;
 
+    [SerializeField]
+    private GameObject gameOver;
+
     private FoodTypeDisplayer foodTypeDisplayer;
     [HideInInspector]
     public int[] CurrentAmmo { get; private set; }
@@ -61,6 +64,8 @@ public class GameManager : MonoSingleton<GameManager>
                 return pancho;
             case FoodType.Choclo:
                 return choclo;
+            case FoodType.Pochoclo:
+                return pochoclo;
             default: return null;
         }
     }
@@ -99,5 +104,11 @@ public class GameManager : MonoSingleton<GameManager>
             nextFood = 0;
         }
         currentFoodType = nextFood;
+    }
+
+    public void LoseGame()
+    {
+        Time.timeScale = 0;
+        gameOver.SetActive(true);
     }
 }

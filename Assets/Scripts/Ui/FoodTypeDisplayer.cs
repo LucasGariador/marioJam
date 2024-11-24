@@ -15,6 +15,8 @@ public class FoodTypeDisplayer : MonoBehaviour
     private Sprite panchoSP;
     [SerializeField]
     private Sprite chocloSP;
+    [SerializeField]
+    private Sprite pochocloSP;
 
     [SerializeField]
     private Image foodContainer;
@@ -47,8 +49,6 @@ public class FoodTypeDisplayer : MonoBehaviour
 
     }
 
-
-
     IEnumerator ReduceFill()
     {
         float elapsedTime = 0f;
@@ -77,6 +77,9 @@ public class FoodTypeDisplayer : MonoBehaviour
                 break;
             case GameManager.FoodType.Choclo:
                 foodImage.sprite= chocloSP;
+                break;
+            case GameManager.FoodType.Pochoclo:
+                foodImage.sprite= pochocloSP;
                 break;
             default:
                 break;
