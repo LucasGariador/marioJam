@@ -576,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 746181275}
   shootSpeed: 5
+  maxAmmo: 5
   fireRate: 0.5
 --- !u!114 &1109500707
 MonoBehaviour:
@@ -769,6 +770,7 @@ MonoBehaviour:
   churro: {fileID: 8271954934264025707, guid: 0c8a806d4334fc043a8085f717dc1c1c, type: 3}
   pancho: {fileID: 616771148540066941, guid: 5afb796034d08464b8ccf7623daea161, type: 3}
   choclo: {fileID: 3705785875485831410, guid: de988279b3aaaef4fad0b9bce6729678, type: 3}
+  pochoclo: {fileID: 0}
   bulletPool: {fileID: 1304859748}
   currentFoodType: 0
 --- !u!4 &1304859747

@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Referencia al SpriteRenderer
     private Sprite originalSprite; // Sprite original para el modo Chase
 
+    [SerializeField] private AudioClip[] audioCruch;
+
     void Start()
     {
         Debug.Log("My food is "+ currentFoodType);
@@ -96,14 +98,30 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void SoundCrunch()
+    {
+        if (audioCruch.Length == 0)
+        {
+            Debug.LogWarning("La lista de sonidos está vacía.");
+            return;
+        }
+
+        // Elije un índice aleatorio
+        int indiceAleatorio = UnityEngine.Random.Range(0, audioCruch.Length);
+
+        AudioManager.instance.PlaySFX(audioCruch[indiceAleatorio]);
+    }
+
     public void GetHit(GameManager.FoodType foodTypeHit)
     {
         // Cambia al estado Idle
         if (foodTypeHit == currentFoodType)
         {
+            SoundCrunch();
             currentState = EnemyState.Idle;
             isFull = true;
             gameObject.GetComponent<CircleCollider2D>().enabled = false; //Desactiva el collider
+
         }
         else
         {

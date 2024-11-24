@@ -118,6 +118,10 @@ MonoBehaviour:
   speed: 2
   stopDistance: 1.5
   idleSprite: {fileID: 0}
+  audioCruch:
+  - {fileID: 8300000, guid: 5e210a439ac088f4c846e761b90a2a45, type: 3}
+  - {fileID: 8300000, guid: ca4d62c0f4dcf3d4bbaf6b0f47755684, type: 3}
+  - {fileID: 8300000, guid: 86647077ed6feea4c95040ffc58cce23, type: 3}
 --- !u!1 &545912486995315943
 GameObject:
   m_ObjectHideFlags: 0
