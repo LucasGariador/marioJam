@@ -11,7 +11,7 @@ public class RestoreAmmo : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player = collision.GetComponent<ShootPlayer>();
+            player = collision.GetComponentInChildren<ShootPlayer>();
             StartCoroutine(nameof(StartRestocking));
         }
 
@@ -29,8 +29,16 @@ public class RestoreAmmo : MonoBehaviour
     {
         while (true)
         {
-            GameManager.instance.StockAmmo();
-            Debug.Log("Socking!!!!");
+            if (GameManager.instance.GetAmmo() < player.maxAmmo)
+            {
+                GameManager.instance.StockAmmo();
+                Debug.Log("Socking!!!!");
+            }
+            else
+            {
+                Debug.Log("Full");
+            }
+
             yield return new WaitForSeconds(restockingSpeed);
         }
     }

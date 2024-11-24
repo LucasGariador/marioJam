@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class ShootPlayer : MonoBehaviour
 {
@@ -28,12 +27,11 @@ public class ShootPlayer : MonoBehaviour
             GameManager.instance.ChangeCurrentFoodType();
         }
 
-
         targetRotation = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(targetRotation.y, targetRotation.x) * Mathf.Rad2Deg;
         gun.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && GameManager.instance.GetAmmo() > 0)
         {
             Shoot();
             nextFireTime = Time.time + fireRate; // Calcular el próximo disparo permitido.
@@ -42,6 +40,7 @@ public class ShootPlayer : MonoBehaviour
 
     void Shoot()
     {
+        
         GameManager.instance.HasShot(fireRate);
         var shoot = bulletPool.GetBullet(GameManager.instance.GetCurrentFoodType(), gun.position, gun.rotation);
         targetRotation.z = 0;

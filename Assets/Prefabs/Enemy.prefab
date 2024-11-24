@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2038892107167159196}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,10 +113,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 1
   foodPosition: {fileID: 7920103837760815267}
+  agroDistance: 15
   player: {fileID: 0}
   speed: 2
   stopDistance: 1.5
-  idleTime: 3
   idleSprite: {fileID: 0}
 --- !u!1 &545912486995315943
 GameObject:

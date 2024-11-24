@@ -10,6 +10,8 @@ public class GameManager : MonoSingleton<GameManager>
     private GameObject pancho;
     [SerializeField]
     private GameObject choclo;
+    [SerializeField]
+    private GameObject pochoclo;
 
     private FoodTypeDisplayer foodTypeDisplayer;
     [HideInInspector]
@@ -21,7 +23,8 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Churro,
         Pancho,
-        Choclo
+        Choclo,
+        Pochoclo
     }
 
     [SerializeField]
